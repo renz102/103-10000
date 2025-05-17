@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMaster - Dark Mode Shopping</title>
+    <style>
+   /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light gray text */
+    line-height: 1.6;
+}
+
+/* Header section */
+header {
+    background-color: #1c1c1c; /* Darker header */
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li button {
+    background-color: #333333; /* Dark buttons */
+    color: #e0e0e0; /* Light text */
+    border: none;
+    padding: 20px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li button:hover {
+    background-color: #2ecc71; /* Green hover effect */
+}
+
+/* Make the "About" button stable */
+#about-btn {
+    width: 100px; /* Fixed width for stability */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Prevent wrapping of text */
+}
+
+/* Main content styles */
+main {
+    margin-top: 100px; /* to account for the fixed header */
+    padding: 50px 20px;
+}
+
+.section {
+    display: none;
+    padding: 50px 0;
+    background-color: #1e1e1e; /* Dark section background */
+    text-align: center;
+    min-height: 400px;
+}
+
+.section.active {
+    display: block;
+    background-color: #2c2c2c; /* Slightly lighter section when active */
+    color: #fff; /* Light text */
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ffffff; /* White heading */
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #b0b0b0; /* Light gray text */
+}
+
+button {
+    background-color: #2ecc71; /* Green button */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #27ae60; /* Darker green on hover */
+}
+
+/* Footer styling */
+footer {
+    background-color: #1c1c1c; /* Dark footer */
+    color: #e0e0e0; /* Light gray text */
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header with navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><button onclick="showSection('home')">Home</button></li>
+                <li><button id="about-btn" onclick="showSection('about')">About</button></li>
+                <li><button onclick="showSection('products')">Products</button></li>
+                <li><button onclick="showSection('contact')">Contact</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="content">
+                <h1>Welcome to Products?</h1>
+                <p>we sell flowers</p>
+                <button onclick="showSection('products')">Explore</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="content">
+                <h1>About Us</h1>
+                <p>We are a trusted online store offering the latest products in technology, fashion, and home goods; or are we?</p>
+                <p>Buendia señores! Im Renz Valenzuela therefore the one responsible for this web's making</p>
+                <p>I'd like to proceed with an Acknowledgement, I would like to express my sincere and deepest gratitude to Lanceharold Bodino Terrazola, Marco Cayabyab Enderes, Rickman Asis Malubag, Carl Gabriel Sabangan, Winlove Punzalan, and Jecris Alexis Manson Caluba for their invaluable support and contributions to the development of this website. Their expertise, guidance, and dedication were instrumental in ensuring the success of this project. I am truly appreciative of their time and effort.</p>
+                <p>The inspiration for this website stems from a combination of two key influences: the onion domain structure used by the Tor network and a hair shop I encountered in 2015 through a random Discord server. First thing ive seen was that they deceived people in the homepage by saying "we sell flowers" just to be suprised by images of people, with their personal information, and their exact location in the word. The onion domain, known for its layered anonymity and secure routing, served as a metaphor for the website's approach to privacy, structure, and accessibility. Additionally, the idea of creating an online space for a hair shop was sparked by a chance encounter with a small business in 2015, which left a lasting impression. The website combines these elements to offer a unique, user-friendly platform that blends security (I couldnt say for sure since they used crypto mainnets for payments), ease of navigation, and a focus on hair services.</p>
+            </div>
+        </section>
+
+     <!-- Products Section -->
+<section id="products" class="section">
+    <div class="content">
+        <h1>Our Products?</h1>
+        <p>Check out the wide range of products we offer!</p>
+        <div class="product-list">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="worldwidehandsome.jpg" width= "250" height="250" alt="Worldwide Handsome" class="product-image">
+                <h2>¿Product #1]</h2>
+                <p>An exquisite hair from Mr. Worldwide Handsome</p>
+                <p class="price">$20,000</p>
+                <button>Buy Now</button>
+                <p></p>
+            </div>
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="hateloss.jpg" width="250" height="250" alt="Hate Loss" class="product-image">
+                <h2>¿Product#2]</h2>
+                <p>One of the most finest hair from ‽.</p>
+                <p class="price">$200</p>
+                <button>Buy Now</button>
+                <p></p>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="pointedsword.jpg" width="250" height="250" alt="Pointed Sword" class="product-image">
+                <h2>¿Product#3]</h2>
+                <p>A precious hair from a noble person, rather a sword with no edge.</p>
+                <p class="price">$500</p>
+                <button>Buy Now</button>
+                <p></p>
+            </div>
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="carlito.jpg" width="250" height="250" alt="Carlito" class="product-image">
+                <h2>¿Product#4]</h2>
+                <p>One if not the finest hair out there, the most precious hair from asian P.Diddy.</p>
+                <p class="price">15,000$</p>
+                <button>Buy Now</button>
+                <p></p>
+            </div>
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="rickie.jpg" width="250" height="250" alt="QUE RICO!" class="product-image">
+                <h2>¿Product#5]</h2>
+                <p>A fine hair from a homogenous person ^_^</p>
+                <p class="price">2$</p>
+                <button>Buy Now</button>
+                <p></p>
+        </div>
+        <!-- Product 6 -->
+            <div class="product">
+                <img src="JEC.jpg" width="250" height="250" alt="JEC!" class="product-image">
+                <h2>¿Product#6]</h2>
+                <p>A fine hair from a glorious person, a good peer of mine</p>
+                <p class="price">500$</p>
+                <button>Buy Now</button>
+    </div>
+</section>
+                <!-- Product list will be here -->
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="content">
+                <h1>Contact Us</h1>
+                <p>If you have any questions, feel free to reach out!</p>
+                <p>Email: support@‽{©¥°¢]+3}:°^%.products‽</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Products?</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the clicked section
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+
+        // Function to generate random text of exactly 3 alienated characters
+        function getRandomText() {
+            const characters = '☍⊛⟆⌘∆✓Ω×⎇⊞⟁⍯⇌◉'; // Using special symbols as "alienated" characters
+            let randomText = '';
+            const textLength = 3; // Exactly 3 characters
+
+            for (let i = 0; i < textLength; i++) {
+                randomText += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+
+            return randomText;
+        }
+
+        // Function to start random text changes immediately
+        function startRandomText() {
+            const aboutBtn = document.getElementById('about-btn');
+            setInterval(() => {
+                aboutBtn.textContent = getRandomText(); // Set random text each time
+            }, 100); // Change every 100ms (fast)
+        }
+
+        // Trigger the random text change when the page loads
+        window.onload = startRandomText;
+
+        // Initialize with the Home section active
+        showSection('home');
+    </script>
+
+</body>
+</html>
